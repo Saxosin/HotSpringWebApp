@@ -1,0 +1,22 @@
+#  Visual Studio files 
+.vs/
+*.user
+*.suo
+
+#  Python artefacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.log
+*.egg-info/
+build/
+dist/
+
+# Virtual-envs
+env/
+venv/
+.venv/
+
+# OS / editor junk
+.DS_Store 
+Thumbs.db

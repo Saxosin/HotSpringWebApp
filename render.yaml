@@ -1,6 +1,17 @@
 services:
   - type: web
-    name: hotspringwebapp          # anything you like
+    name: hotspringwebapp
     plan: free
-    dockerfilePath: ./Dockerfile   # <─ NEW line tells Render to use Docker
-    autoDeploy: true
+    dockerfilePath: ./Dockerfile
+
+    # ← THIS line tells Render which container port to route
+    envVars:
+      - key: PORT
+        value: "10000"
+
+    # Register the same port with Render’s router
+    ports:
+      - port: 10000
+        protocol: tcp         # default; http works too
+
+    healthCheckPath: /health  # we already added this endpoint

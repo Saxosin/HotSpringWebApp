@@ -1,0 +1,13 @@
+# render.yaml  (place at repo root)
+services:
+  - type: web
+    name: hotspringwebapp
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn --bind 0.0.0.0:$PORT HotSpringWebApp.HotSpringWebApp:app"
+    autoDeploy: true
+    plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11"
+    port: 10000        # 👈 tells Render the published port

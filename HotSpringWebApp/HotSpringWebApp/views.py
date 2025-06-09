@@ -8,7 +8,7 @@ HotSpringWebApp – final drop-in
 
 from datetime import datetime
 from flask import render_template, request, url_for, send_from_directory
-from HotSpringWebApp import app
+from . import app
 import pandas as pd, folium, os, re, json, zipfile, simplekml
 from folium.plugins import MarkerCluster, HeatMap
 from folium.elements import Element

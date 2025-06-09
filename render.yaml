@@ -4,14 +4,9 @@ services:
     plan: free
     dockerfilePath: ./Dockerfile
 
-    # ← THIS line tells Render which container port to route
-    envVars:
-      - key: PORT
-        value: "10000"
-
-    # Register the same port with Render’s router
+    # tell Render exactly which port in the container to expose
     ports:
-      - port: 10000
-        protocol: tcp         # default; http works too
+      - port: 10000         # ← matches EXPOSE and Gunicorn
+        protocol: tcp
 
-    healthCheckPath: /health  # we already added this endpoint
+    healthCheckPath: /health

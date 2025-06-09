@@ -1,12 +1,15 @@
 services:
   - type: web
-    name: hotspringwebapp           # any name is fine
+    name: hotspringwebapp
+    env: docker
     plan: free
-
-    dockerfilePath: ./Dockerfile    # use the Dockerfile you created
     autoDeploy: true
 
-    # 👇 tells Render which container port to route — disables port-scanner
-    port: 10000
+    # Optional: Timeout settings for long loads
+    healthCheckPath: /
+    dockerfilePath: ./Dockerfile
 
-    healthCheckPath: /health        # we already added this endpoint
+    envVars:
+      - key: PORT
+        value: 10000
+

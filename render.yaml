@@ -1,12 +1,12 @@
 services:
   - type: web
-    name: hotspringwebapp
+    name: hotspringwebapp           # any name is fine
     plan: free
-    dockerfilePath: ./Dockerfile
 
-    # tell Render exactly which port in the container to expose
-    ports:
-      - port: 10000         # ← matches EXPOSE and Gunicorn
-        protocol: tcp
+    dockerfilePath: ./Dockerfile    # use the Dockerfile you created
+    autoDeploy: true
 
-    healthCheckPath: /health
+    # 👇 tells Render which container port to route — disables port-scanner
+    port: 10000
+
+    healthCheckPath: /health        # we already added this endpoint

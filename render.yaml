@@ -8,3 +8,5 @@ services:
     envVars:
       - key: PORT
         value: 10000
+
+    startCommand: gunicorn HotSpringWebApp.HotSpringWebApp:app

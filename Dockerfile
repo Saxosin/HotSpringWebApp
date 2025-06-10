@@ -5,7 +5,7 @@ RUN pip install --upgrade pip && pip install --prefix=/install -r requirements.t
 
 FROM python:3.11-slim
 WORKDIR /app
-ENV PYTHONPATH=/app  # <-- This is the fix
+ENV PYTHONPATH=/app
 COPY --from=builder /install /usr/local
 COPY . .
 

@@ -9,5 +9,5 @@ def create_app():
 
     return app
 
-# 🔥 Add this line so Gunicorn can find it
+# 👉 Expose `app` here for Gunicorn
 app = create_app()

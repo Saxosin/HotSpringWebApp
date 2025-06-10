@@ -9,4 +9,4 @@ services:
       - key: PORT
         value: 10000
 
-    startCommand: gunicorn HotSpringWebApp.HotSpringWebApp:app
+    startCommand: gunicorn HotSpringWebApp.HotSpringWebApp:app --bind 0.0.0.0:10000
